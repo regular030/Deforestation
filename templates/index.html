@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deforestation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #e9e7e7af;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px;
+            color: #ffffff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        header p {
+            position: absolute;
+            bottom: 0;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+            overflow: hidden;
+            position: fixed;
+            top: 94px;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        nav a:hover {
+            background-color: #6b645f86;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+            padding-left: 140px;
+            z-index: 0;
+        }
+
+        section {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        #menu-toggle {
+            font-size: 20px;
+            cursor: pointer;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 3;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0; /* Set initial opacity to 0 */
+            animation: fadeInUp 1s; /* Apply the animation */
+        }
+
+        /* Add a delay to the animations for a staggering effect */
+        .fade-in:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .fade-in:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .fade-in:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        /* Continue adding nth-child selectors as needed */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="showSection('main')">Deforestation</h1>
+        <p></p>
+    </header>
+
+    <nav>
+        <a href="#main" onclick="scrollToTop('main')">Main</a>
+        <a href="#effects" onclick="scrollToTop('effects')">Effects</a>
+        <a href="#prevention" onclick="scrollToTop('prevention')">Prevention</a>
+        <a href="#detection" onclick="scrollToTop('detection')">Detection</a>
+    </nav>
+
+    <main>
+        <section id="main" class="active">
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Deforestation refers to the large-scale removal of trees and forested areas, often to make way for agriculture, urban development, or other human activities. This process results in the permanent conversion of forested land to non-forested areas, dramatically altering the landscape. While forests once covered vast portions of the Earth, providing crucial ecosystems for countless species and serving as major carbon sinks, the rate at which these areas are being cleared has raised significant concern.</p>
+            <h2 class="fade-in"></h2>
+            <img class="fade-in" src="img/IMG1.jpg" alt="Main Image">           
+            <p class="fade-in">Historically, deforestation has been driven by the need for land and resources. Early civilizations cleared forests for agricultural purposes and settlement expansion. In modern times, the demand has expanded to include logging for timber, palm oil plantations, and infrastructure development. Technological advancements have increased the efficiency and scale of deforestation, making it possible to clear large tracts of forest in a relatively short time.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Understanding deforestation requires looking at both its methods and motivations. Clear-cutting, slash-and-burn agriculture, and selective logging are common techniques. These practices can vary in their environmental impact, but they all contribute to the reduction of forest cover. Economic factors often drive deforestation, as forests are cleared to create more arable land, harvest valuable timber, or develop urban areas. Social and political factors, such as land ownership issues and governance challenges, also play significant roles in how and why deforestation occurs.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Overall, deforestation is a complex issue rooted in human activity and economic development. It highlights the delicate balance between utilizing natural resources and preserving the environment. Understanding the intricacies of deforestation is essential for addressing the broader environmental challenges it poses.</p>
+        </section>
+
+        <section id="effects">
+            <h2 class="fade-in">Effects</h2>
+            <p class="fade-in">Forests are home to a vast array of species, many of which are endemic and cannot survive elsewhere. When trees are cut down, these species lose their habitat, leading to declines in population and, in some cases, extinction. The intricate web of life that forests support, including plants, animals, fungi, and microorganisms, is disrupted, reducing the resilience of ecosystems and diminishing their ability to provide essential services such as pollination, seed dispersal, and soil formation.</p>
+            <h2 class="fade-in"></h2>
+            <img class="fade-in" src="img/IMG2.jpg" alt="Effects Image">           
+            <p class="fade-in">Another major consequence of deforestation is its contribution to climate change. Trees play a critical role in sequestering carbon dioxide from the atmosphere, acting as carbon sinks that mitigate the greenhouse effect. When forests are cleared, the stored carbon is released back into the atmosphere as carbon dioxide, exacerbating global warming. Additionally, deforestation often involves burning trees, which directly releases significant amounts of carbon dioxide. This process not only accelerates climate change but also affects weather patterns and increases the frequency and severity of extreme weather events such as droughts and floods, which can have devastating effects on both natural and human systems.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Deforestation also has profound socio-economic impacts. Many indigenous communities rely on forests for their livelihoods, cultural identity, and traditional practices. The loss of forests disrupts these communities' way of life, leading to displacement, loss of income, and cultural disintegration. Additionally, the loss of forests can have far-reaching economic consequences for broader society. Forests provide valuable resources such as timber, medicinal plants, and non-timber forest products. The degradation of these resources can lead to shortages and increased prices, impacting industries and economies that depend on them. Furthermore, the loss of ecosystem services provided by forests, such as water regulation and soil protection, can lead to increased costs for managing water resources and agricultural productivity.</p>
+        </section>
+
+        <section id="prevention">
+            <h2 class="fade-in">Prevention</h2>
+            <p class="fade-in">Preventing deforestation requires a multifaceted approach that addresses its underlying causes while promoting sustainable alternatives. One of the most effective strategies is implementing and enforcing stricter regulations and laws that protect forested areas. Governments can designate protected areas and national parks, restrict logging activities, and require reforestation efforts where trees have been removed. Effective enforcement of these regulations is crucial to ensure compliance and mitigate illegal deforestation.</p>
+            <h2 class="fade-in"></h2>
+            <img class="fade-in" src="img/IMG3.jpg" alt="Prevention Image">           
+            <p class="fade-in">Promoting sustainable land-use practices is another critical component of deforestation prevention. This includes agroforestry, which integrates trees into agricultural systems, and sustainable logging practices that ensure forests can regenerate. These methods allow for the continued use of land and resources while maintaining forest cover and biodiversity. Supporting local and indigenous communities in managing their forests can also be beneficial, as these groups often have traditional knowledge and a vested interest in preserving their natural environment.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Economic incentives can play a significant role in preventing deforestation. Programs such as payments for ecosystem services (PES) provide financial rewards to landowners who maintain forest cover and protect biodiversity. Additionally, promoting and supporting the market for sustainably sourced products, like certified timber and palm oil, can reduce the economic pressures that drive deforestation. Consumers, businesses, and governments all have roles in fostering demand for these sustainable products.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Education and awareness campaigns are vital for changing behaviors and attitudes toward deforestation. Raising awareness about the importance of forests and the consequences of their destruction can inspire individuals and communities to take action. Educational programs can teach sustainable practices and highlight the benefits of forest conservation, encouraging people to become stewards of their environment. International cooperation and partnerships are also essential, as deforestation is a global issue that requires coordinated efforts across borders.</p>
+        </section>
+
+        <section id="detection">
+            <h2 class="fade-in">Detection</h2>
+            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2 class="fade-in"></h2>
+            <img class="fade-in" src="img/main_image.jpg" alt="Detection Image">           
+            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+
+        // Set the initial active section based on the URL fragment identifier
+        window.onload = function() {
+            var fragment = window.location.hash.substring(1); // Get the fragment identifier without the '#'
+            if (fragment) {
+                showSection(fragment);
+            } else {
+                showSection('main'); // Default to the main section
+            }
+        };
+
+        // Handle changes in the fragment identifier (e.g., when clicking on internal links)
+        window.onhashchange = function() {
+            var fragment = window.location.hash.substring(1); // Get the fragment identifier without the '#'
+            if (fragment) {
+                showSection(fragment);
+            }
+        };
+
+        function scrollToTop(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                showSection(sectionId); // Ensure the section becomes active when scrolled to
+            }
+        }
+
+        // Intersection Observer for triggering fade-in animations
+        docuxment.addEventListener('DOMContentLoaded', function() {
+            var observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            var fadeIns = document.querySelectorAll('.fade-in');
+            var observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 1s forwards'; // Set the animation with forwards
+                        observer.unobserve(entry.target); // Unobserve once the animation has been triggered
+                    }
+                });
+            }, observerOptions);
+
+            fadeIns.forEach(function(element) {
+                observer.observe(element);
+            });
+        });
+
+    </script>
+</body>
+</html>
