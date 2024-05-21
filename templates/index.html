@@ -195,11 +195,16 @@
 
         <section id="detection">
             <h2 class="fade-in">Detection</h2>
-            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h2 class="fade-in"></h2>
             <img class="fade-in" src="img/main_image.jpg" alt="Detection Image">           
-            <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </section>
+            <p class="fade-in">Using AI models for monitoring and policing deforestation can significantly enhance efforts to combat illegal logging and land use practices. These models can analyze satellite imagery and other remote sensing data to detect changes in forest cover with high accuracy and efficiency. By employing machine learning algorithms, these models can learn to distinguish between natural fluctuations in vegetation and human-induced deforestation, enabling authorities to pinpoint areas of concern more effectively.            </p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">For policing purposes, AI models can be trained to identify specific signatures associated with deforestation activities, such as the clearing of large swaths of forest or the presence of logging roads and machinery. By continuously analyzing satellite imagery in near real-time, these models can alert authorities to suspicious activities as they occur, allowing for rapid response and intervention. This proactive approach can help deter illegal logging and land conversion, ultimately reducing the overall rate of deforestation.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">Furthermore, AI models can aid in the enforcement of laws and regulations governing land use and forest protection. By analyzing historical data and identifying patterns of deforestation, these models can help authorities target enforcement efforts more strategically, focusing resources on areas with the highest risk of illegal activity. Additionally, AI-powered monitoring systems can provide valuable evidence for prosecuting offenders, enhancing the effectiveness of law enforcement actions and serving as a deterrent to future deforestation.</p>
+            <h2 class="fade-in"></h2>
+            <p class="fade-in">In terms of monitoring usage, AI models can track changes in land cover and land use over time, providing valuable insights into trends and patterns of deforestation. By analyzing large volumes of data, these models can identify hotspots of deforestation and monitor the effectiveness of conservation efforts and land management practices. This information can inform decision-making processes at both local and global levels, guiding the allocation of resources and the development of policies aimed at mitigating deforestation and promoting sustainable land use practices. Overall, leveraging AI technology for monitoring, policing, and enforcing regulations related to deforestation holds great promise for protecting and preserving our planet's precious forests.</p>
+            <h2 class="fade-in"></h2>
+    </section>
     </main>
 
     <script>
@@ -209,14 +214,14 @@
             sections.forEach(function(section) {
                 section.classList.remove('active');
             });
-
+    
             // Show the selected section
             var selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.classList.add('active');
             }
         }
-
+    
         // Set the initial active section based on the URL fragment identifier
         window.onload = function() {
             var fragment = window.location.hash.substring(1); // Get the fragment identifier without the '#'
@@ -226,7 +231,7 @@
                 showSection('main'); // Default to the main section
             }
         };
-
+    
         // Handle changes in the fragment identifier (e.g., when clicking on internal links)
         window.onhashchange = function() {
             var fragment = window.location.hash.substring(1); // Get the fragment identifier without the '#'
@@ -234,7 +239,7 @@
                 showSection(fragment);
             }
         };
-
+    
         function scrollToTop(sectionId) {
             var section = document.getElementById(sectionId);
             if (section) {
@@ -242,30 +247,30 @@
                 showSection(sectionId); // Ensure the section becomes active when scrolled to
             }
         }
-
+    
         // Intersection Observer for triggering fade-in animations
-        docuxment.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             var observerOptions = {
                 root: null,
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
-
+    
             var fadeIns = document.querySelectorAll('.fade-in');
             var observer = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 1s forwards'; // Set the animation with forwards
+                        entry.target.style.opacity = 1; // Set opacity to 1 when element is visible
                         observer.unobserve(entry.target); // Unobserve once the animation has been triggered
                     }
                 });
             }, observerOptions);
-
+    
             fadeIns.forEach(function(element) {
                 observer.observe(element);
             });
         });
-
     </script>
+    
 </body>
 </html>
